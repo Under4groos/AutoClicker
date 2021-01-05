@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\UnderKo\source\repos\AutoClicker\AutoClicker\App.xaml
-5-2064034918
+7-1593263831
 
-11938820404
+13-1341085565
 15-1358686748
-Clicker.xaml;MainWindow.xaml;ScriptPanel.xaml;Styles\ScrollViewer.xaml;WindowInfo.xaml;
+Clicker.xaml;Controls\CCBoxKeyMouse.xaml;MainWindow.xaml;PanelActions.xaml;ScriptPanel.xaml;Styles\ScrollViewer.xaml;WindowInfo.xaml;
 
 False
 

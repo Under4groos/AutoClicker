@@ -201,7 +201,55 @@
         </Border>
         <Border BorderBrush="#FFA200FF" BorderThickness="0,1,1,1" Grid.Column="1">
             <Grid>
+                <Grid HorizontalAlignment="Left" Width="225">
+                    <StackPanel>
+                        <Border Background="White" Height="45" VerticalAlignment="Top">
+                            <StackPanel>
+                                <Border Background="#FF898989">
+                                    <Grid>
+                                        <Label Content="Name" FontFamily="Corbel" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Border>
+                                <TextBox x:Name="NameTextBox" TextWrapping="Wrap" Height="20" Background="#FFACACAC" BorderThickness="0" SelectionTextBrush="White" BorderBrush="White" CaretBrush="Red"/>
+                            </StackPanel>
+                        </Border>
 
+                        <Border Background="White" Height="45" VerticalAlignment="Top" Margin="0,5,0,0" >
+                            <StackPanel>
+                                <Border Background="#FF898989">
+                                    <Grid>
+                                        <Label Content="Position cursor" FontFamily="Corbel" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Border>
+                                <TextBox x:Name="dTextBox" TextWrapping="Wrap" Height="20" Background="#FFACACAC" BorderThickness="0" SelectionTextBrush="White" BorderBrush="White" CaretBrush="Red"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="White" Height="55" Margin="0,5,0,0">
+                            <StackPanel>
+                                <Border Background="#FF898989" VerticalAlignment="Top">
+                                    <Grid>
+                                        <Label Content="Mouse key" FontFamily="Corbel" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Border>
+                                <Grid Margin="0,3,0,0">
+                                    <Border x:Name="B1" Background="Red" Width="25" Height="25" HorizontalAlignment="Left" MouseDown="MouseDown_m1">
+                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="L" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                                    </Border>
+                                    <Border x:Name="B2" Background="Red" Width="25" Height="25" MouseDown="MouseDown_m2">
+                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="M" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                                    </Border>
+                                    <Border x:Name="B3" Background="Red" Width="25" Height="25" HorizontalAlignment="Right" MouseDown="MouseDown_m3">
+                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="R" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                                    </Border>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                    
+                   
+                </Grid>
 
                 <StackPanel x:Name="stackPanel" VerticalAlignment="Bottom" Height="29" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,0,5,5">
                     <Border BorderBrush="#FFA8A8A8" CornerRadius="4" BorderThickness="1"  Width="134" HorizontalAlignment="Right" Height="{Binding Height, ElementName=stackPanel, Mode=OneWay}" MouseDown="Border_MouseDown">

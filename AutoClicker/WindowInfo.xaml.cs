@@ -24,12 +24,15 @@ namespace AutoClicker
         {
             InitializeComponent();
         }
-        public void SetInfo(string Act, string key, string time)
+        public void SetInfo(string Act, string key, string time , bool[] m)
         {
             Active.Content = $"Active: {Act}";
             Key.Content = $"Key: {key}"; 
             Time.Content = $"Time: {time}";
             this.Topmost = true;
+            Mousebutton.Content = $"Mouse button:\n L: {m[0]}\n M: {m[1]}\n R: {m[2]}";
+            
+
         }
       
     }

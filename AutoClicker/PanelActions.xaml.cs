@@ -23,6 +23,36 @@ namespace AutoClicker
         public PanelActions()
         {
             InitializeComponent();
+            
+        }
+        public void SetName(string str )
+        {
+            NameActivonPanel.Content = str;
+        }
+
+        public string Namelabel
+        {
+            get; set;
+        } = "";
+
+        public bool[] MouseClick
+        {
+            get; set;
+        } = { false, false, false };
+
+        public Point MouseSetPos
+        {
+            get;set;
+        }
+
+        public int TimeSleep
+        {
+            get; set;
+        } = 1;
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            SetName(Namelabel);
         }
     }
 }

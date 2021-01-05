@@ -21,16 +21,29 @@ namespace AutoClicker
     public partial class ScriptPanel : UserControl
     {
         int? Index = null;
+        bool[] KeyStateMosue = {
+            false,
+            false,
+            false
+        };
+
+
+
+
         public ScriptPanel()
         {
             InitializeComponent();
         }
-        public void AddNewPanel()
+        public void AddNewPanel(string Name, int sleep, bool[] MouseCl , Point MousePos)
         {
-            Border B = new Border()
+            PanelActions B = new PanelActions()
             {
-                Height = new Random().Next(10, 125),
-                Background = Brushes.Red,
+                Namelabel = Name,
+                TimeSleep = sleep,
+                MouseClick = MouseCl,
+                MouseSetPos = MousePos,
+                Height = 35,
+                Background = Brushes.White,
                 Margin = new Thickness(0,5,0,0),
                 
             };
@@ -39,28 +52,42 @@ namespace AutoClicker
         }
         public void RemooveID(int id)
         {
-            
-            if (StackPanel_ScrollViewer.Children.Count >= 1)
-                StackPanel_ScrollViewer.Children.RemoveAt(id);
+            if (StackPanel_ScrollViewer.Children.Count < 1)
+                return;        
+            StackPanel_ScrollViewer.Children.RemoveAt(id);
         }
-        
-        
-        
+
+
+
+        public void SetBackgroundMouse()
+        {
+            Border[] Borders = { B1, B2, B3 };
+
+            for (int i = 0; i < Borders.Length; i++)
+            {
+                if (KeyStateMosue[i])
+                {
+                    Borders[i].Background = Brushes.Green;
+                }
+                else
+                {
+                    Borders[i].Background = Brushes.Red;
+                }
+            }
+        }
 
         private void B_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Index = StackPanel_ScrollViewer.Children.IndexOf(sender as UIElement);
-            //MessageBox.Show($"{Index}");
-        }
-
-        
             
 
-        
+
+
+        }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            AddNewPanel();
+            //AddNewPanel();
         }
 
         private void Label_MouseDown(object sender, MouseButtonEventArgs e)
@@ -70,8 +97,29 @@ namespace AutoClicker
             RemooveID((int)Index);
         }
 
-        //MessageBox.Show("You've touched n°" + StackPanel_ScrollViewer.Children.IndexOf(sender as UIElement));
 
+
+        #region MouseDown_m123
+        private void MouseDown_m1(object sender, MouseButtonEventArgs e)
+        {
+            KeyStateMosue[0] = !KeyStateMosue[0];
+            SetBackgroundMouse();
+        }
+
+        private void MouseDown_m2(object sender, MouseButtonEventArgs e)
+        {
+            KeyStateMosue[1] = !KeyStateMosue[1];
+            SetBackgroundMouse();
+        }
+
+        private void MouseDown_m3(object sender, MouseButtonEventArgs e)
+        {
+
+            KeyStateMosue[2] = !KeyStateMosue[2];
+            SetBackgroundMouse();
+        }
+        #endregion
+   
 
 
     }

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="AutoClicker.Controls.CCBoxKeyMouse"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AutoClicker.Controls"
+             mc:Ignorable="d" Width="180">
+    <Grid>
+        <Border Background="White" Height="55">
+            <StackPanel>
+                <Border Background="#FF898989" VerticalAlignment="Top">
+                    <Grid>
+                        <Label Content="Mouse key" FontFamily="Corbel" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Left"/>
+                    </Grid>
+                </Border>
+                <Grid Margin="0,3,0,0">
+                    <Border x:Name="B1" Background="Red" Width="25" Height="25" HorizontalAlignment="Left" MouseDown="MouseDown_m1">
+                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="L" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                    </Border>
+                    <Border x:Name="B2" Background="Red" Width="25" Height="25" MouseDown="MouseDown_m2">
+                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="M" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                    </Border>
+                    <Border x:Name="B3" Background="Red" Width="25" Height="25" HorizontalAlignment="Right" MouseDown="MouseDown_m3">
+                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="R" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

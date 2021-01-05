@@ -57,7 +57,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\CCBoxKeyMouse.xaml.cs">
+      <DependentUpon>CCBoxKeyMouse.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Mouse.cs" />
+    <Compile Include="PanelActions.xaml.cs">
+      <DependentUpon>PanelActions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ScriptPanel.xaml.cs">
       <DependentUpon>ScriptPanel.xaml</DependentUpon>
     </Compile>
@@ -66,6 +72,10 @@
       <DependentUpon>WindowInfo.xaml</DependentUpon>
     </Compile>
     <Page Include="Clicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CCBoxKeyMouse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -85,6 +95,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PanelActions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ScriptPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -40,22 +40,22 @@ namespace AutoClicker
             false            
         };
 
-        public void SetBackgroundMouse()
-        {
-            Border[] Borders = { B1, B2, B3 };
+        //public void SetBackgroundMouse()
+        //{
+        //    Border[] Borders = { B1, B2, B3 };
 
-            for (int i = 0; i < Borders.Length; i++)
-            {
-                if (KeyStateMosue[i])
-                {
-                    Borders[i].Background = Brushes.Green;
-                }
-                else
-                {
-                    Borders[i].Background = Brushes.Red;
-                }
-            }
-        }
+        //    for (int i = 0; i < Borders.Length; i++)
+        //    {
+        //        if (KeyStateMosue[i])
+        //        {
+        //            Borders[i].Background = Brushes.Green;
+        //        }
+        //        else
+        //        {
+        //            Borders[i].Background = Brushes.Red;
+        //        }
+        //    }
+        //}
 
         public int KeyID
         {
@@ -75,7 +75,7 @@ namespace AutoClicker
         {
             InitializeComponent();
             timerTick.Tick += TimerTick_Tick;
-            SetBackgroundMouse();
+            //SetBackgroundMouse();
             timerTick.Start();
             TimeBox.Text = timerTick.Time.ToString();
         }
@@ -130,14 +130,14 @@ namespace AutoClicker
                 UpdateInfo();
             };
             KeyH.SetHook();
-            Focus.Focus();
+            Focusd.Focus();
             UpdateInfo();
         }
         public void UpdateInfo()
         {
             if (WI.IsVisible)
             {
-                WI.SetInfo(ActiveKey.ToString(), TextBoxBindKey.Text, timerTick.Time.ToString());
+                WI.SetInfo(ActiveKey.ToString(), TextBoxBindKey.Text, timerTick.Time.ToString() , KeyStateMosue);
 
             }
         }
@@ -149,7 +149,7 @@ namespace AutoClicker
             KeyName = "";
             ActiveKey = false;
             TextBoxBindKey.Text = "";
-            Focus.Focus();
+            Focusd.Focus();
             UpdateInfo();
         }
 
@@ -206,8 +206,8 @@ namespace AutoClicker
         private void TimeBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter || e.Key == Key.Space)
-                       
-                Focus.Focus();
+
+                Focusd.Focus();
         }
 
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
@@ -221,22 +221,28 @@ namespace AutoClicker
             CCclick.Background = Brushes.Green;
         }
 
-        private void MouseDown_m1(object sender, MouseButtonEventArgs e)
+        private void CCBoxKeyMouse__MouseDown(object sender, MouseButtonEventArgs e)
         {
-            KeyStateMosue[0] = !KeyStateMosue[0];
-            SetBackgroundMouse();
+            KeyStateMosue = CCBoxKeyMouse_.KeyStateMosue;
+            UpdateInfo();
         }
 
-        private void MouseDown_m2(object sender, MouseButtonEventArgs e)
-        {
-            KeyStateMosue[1] = !KeyStateMosue[1];
-            SetBackgroundMouse();
-        }
+        //private void MouseDown_m1(object sender, MouseButtonEventArgs e)
+        //{
+        //    KeyStateMosue[0] = !KeyStateMosue[0];
+        //    SetBackgroundMouse();
+        //}
 
-        private void MouseDown_m3(object sender, MouseButtonEventArgs e)
-        {
-            KeyStateMosue[2] = !KeyStateMosue[2];
-            SetBackgroundMouse();
-        }
+        //private void MouseDown_m2(object sender, MouseButtonEventArgs e)
+        //{
+        //    KeyStateMosue[1] = !KeyStateMosue[1];
+        //    SetBackgroundMouse();
+        //}
+
+        //private void MouseDown_m3(object sender, MouseButtonEventArgs e)
+        //{
+        //    KeyStateMosue[2] = !KeyStateMosue[2];
+        //    SetBackgroundMouse();
+        //}
     }
 }
