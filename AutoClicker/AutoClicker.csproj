@@ -64,6 +64,7 @@
     <Compile Include="PanelActions.xaml.cs">
       <DependentUpon>PanelActions.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pocces.cs" />
     <Compile Include="ScriptPanel.xaml.cs">
       <DependentUpon>ScriptPanel.xaml</DependentUpon>
     </Compile>

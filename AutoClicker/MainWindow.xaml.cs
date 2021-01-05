@@ -31,6 +31,12 @@ namespace AutoClicker
         {
             InitializeComponent();
             ClickerPanel.KeyEventAdd(KeyEvent);
+
+
+            foreach (string item in AutoClicker.Pocces.isWindowValid())
+            {
+                Console.WriteLine(item);
+            }
         }
         void KeyEvent(object o, KeyEventArgs e)
         {

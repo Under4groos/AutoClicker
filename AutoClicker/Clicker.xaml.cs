@@ -226,23 +226,5 @@ namespace AutoClicker
             KeyStateMosue = CCBoxKeyMouse_.KeyStateMosue;
             UpdateInfo();
         }
-
-        //private void MouseDown_m1(object sender, MouseButtonEventArgs e)
-        //{
-        //    KeyStateMosue[0] = !KeyStateMosue[0];
-        //    SetBackgroundMouse();
-        //}
-
-        //private void MouseDown_m2(object sender, MouseButtonEventArgs e)
-        //{
-        //    KeyStateMosue[1] = !KeyStateMosue[1];
-        //    SetBackgroundMouse();
-        //}
-
-        //private void MouseDown_m3(object sender, MouseButtonEventArgs e)
-        //{
-        //    KeyStateMosue[2] = !KeyStateMosue[2];
-        //    SetBackgroundMouse();
-        //}
     }
 }

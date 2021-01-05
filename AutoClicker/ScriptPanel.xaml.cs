@@ -52,42 +52,31 @@ namespace AutoClicker
         }
         public void RemooveID(int id)
         {
-            if (StackPanel_ScrollViewer.Children.Count < 1)
-                return;        
-            StackPanel_ScrollViewer.Children.RemoveAt(id);
-        }
-
-
-
-        public void SetBackgroundMouse()
-        {
-            Border[] Borders = { B1, B2, B3 };
-
-            for (int i = 0; i < Borders.Length; i++)
+            //if (StackPanel_ScrollViewer.Children.Count < 1)
+            //    return;        
+            try
             {
-                if (KeyStateMosue[i])
-                {
-                    Borders[i].Background = Brushes.Green;
-                }
-                else
-                {
-                    Borders[i].Background = Brushes.Red;
-                }
+                StackPanel_ScrollViewer.Children.RemoveAt(id);
+                ERROR.Visibility = Visibility.Hidden;
+                
             }
+            catch (Exception)
+            {
+                ERROR.Visibility = Visibility.Visible;
+            }
+            
         }
 
         private void B_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Index = StackPanel_ScrollViewer.Children.IndexOf(sender as UIElement);
-            
-
-
-
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             //AddNewPanel();
+
+            AddNewPanel(NameTextBox.Text, 1, new bool[] { true, true, true }, new Point());
         }
 
         private void Label_MouseDown(object sender, MouseButtonEventArgs e)
@@ -98,29 +87,9 @@ namespace AutoClicker
         }
 
 
-
-        #region MouseDown_m123
-        private void MouseDown_m1(object sender, MouseButtonEventArgs e)
-        {
-            KeyStateMosue[0] = !KeyStateMosue[0];
-            SetBackgroundMouse();
-        }
-
-        private void MouseDown_m2(object sender, MouseButtonEventArgs e)
-        {
-            KeyStateMosue[1] = !KeyStateMosue[1];
-            SetBackgroundMouse();
-        }
-
-        private void MouseDown_m3(object sender, MouseButtonEventArgs e)
+        private void CCBoxKeyMouse_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            KeyStateMosue[2] = !KeyStateMosue[2];
-            SetBackgroundMouse();
         }
-        #endregion
-   
-
-
     }
 }
