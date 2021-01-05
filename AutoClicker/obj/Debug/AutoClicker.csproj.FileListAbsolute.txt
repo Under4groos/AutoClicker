@@ -20,3 +20,4 @@ C:\Users\UnderKo\source\repos\AutoClicker\AutoClicker\obj\Debug\WindowInfo.g.cs
 C:\Users\UnderKo\source\repos\AutoClicker\AutoClicker\obj\Debug\WindowInfo.baml
 C:\Users\UnderKo\source\repos\AutoClicker\AutoClicker\obj\Debug\ScriptPanel.g.cs
 C:\Users\UnderKo\source\repos\AutoClicker\AutoClicker\obj\Debug\ScriptPanel.baml
+C:\Users\UnderKo\source\repos\AutoClicker\AutoClicker\obj\Debug\Styles\ScrollViewer.baml

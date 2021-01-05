@@ -38,18 +38,30 @@ namespace AutoClicker
             
             ClickerPanel.SetKey(e.Key);
         }
+        /// <summary>
+        /// Перемещение она.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.LeftButton == MouseButtonState.Pressed)
                 this.DragMove();
         }
-
+        /// <summary>
+        /// Кнопка закрытия окна.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Border_MouseDown_1(object sender, MouseButtonEventArgs e)
-        {
-            
+        {         
             Process.GetCurrentProcess().Kill();
         }
-
+        /// <summary>
+        /// Сворачивание она.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Border_MouseDown_2(object sender, MouseButtonEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
