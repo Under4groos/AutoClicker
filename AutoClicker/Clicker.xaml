@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              Width="500" Height="290"
-             Background="#B2808080">
+             Background="#B22C2C2C">
     <Grid>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="Clicker #1" FontFamily="Comic Sans MS" Foreground="White" FontSize="18" Margin="10,10,0,0" FontWeight="Bold"></Label>
         <StackPanel Width="170" HorizontalAlignment="Left" Margin="15,45,0,0">

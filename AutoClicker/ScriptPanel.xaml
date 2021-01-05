@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AutoClicker" Background="#B2808080"   
-             Width="500" Height="290">
+             xmlns:local="clr-namespace:AutoClicker" Background="#B22C2C2C"
+             Width="1200" Height="600">
 
 
     <UserControl.Resources>
@@ -85,7 +85,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
         <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
             <Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="OverridesDefaultStyle" Value="true"/>
@@ -99,7 +98,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
         <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
             <Grid>
                 <Grid.RowDefinitions>
@@ -186,22 +184,59 @@
             </Setter>
         </Style>
     </UserControl.Resources>
+
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="49*"/>
-            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="17*"/>
         </Grid.ColumnDefinitions>
-        <ScrollViewer Style="{DynamicResource FavsScrollViewer}"  Grid.ColumnSpan="1">
-            <StackPanel>
-                <Border BorderBrush="White" BorderThickness="1" Height="46" />
-                <Border BorderBrush="White" BorderThickness="1" Height="100" Width="100"/>
-                <Border BorderBrush="White" BorderThickness="1" Height="600" Width="200"/>
-                <Border BorderBrush="White" BorderThickness="1" Height="100" Width="100"/>
-
-            </StackPanel>
+        <Border Grid.ColumnSpan="1" BorderBrush="#FFA200FF" BorderThickness="1">
+            <ScrollViewer Style="{DynamicResource FavsScrollViewer}">
+                <StackPanel x:Name="StackPanel_ScrollViewer">
 
 
-        </ScrollViewer>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+        <Border BorderBrush="#FFA200FF" BorderThickness="0,1,1,1" Grid.Column="1">
+            <Grid>
+
+
+                <StackPanel x:Name="stackPanel" VerticalAlignment="Bottom" Height="29" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,0,5,5">
+                    <Border BorderBrush="#FFA8A8A8" CornerRadius="4" BorderThickness="1"  Width="134" HorizontalAlignment="Right" Height="{Binding Height, ElementName=stackPanel, Mode=OneWay}" MouseDown="Border_MouseDown">
+                        <Border.Style>
+                            <Style>
+                                <Setter Property="Border.Background" Value="#FF494949"/>
+                                <Style.Triggers>
+                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                        <Setter  Property="Border.Background" Value="#FF767676" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <Label Content="Добавить" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" Margin="1,-6,-1,-2" Foreground="White"/>
+
+                    </Border>
+                    <Border BorderBrush="#FFA8A8A8" CornerRadius="4" BorderThickness="1"  Width="134" HorizontalAlignment="Right" Height="{Binding Height, ElementName=stackPanel, Mode=OneWay}" Margin="5,0,0,0">
+                        <Border.Style>
+                            <Style>
+                                <Setter Property="Border.Background" Value="#FF494949"/>
+                                <Style.Triggers>
+                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                        <Setter  Property="Border.Background" Value="#FF767676" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <Label Content="Удалить" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontSize="18" Margin="1,-6,-1,-2" Foreground="White" MouseDown="Label_MouseDown"/>
+
+                    </Border>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+
 
 
 

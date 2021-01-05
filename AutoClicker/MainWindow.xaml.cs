@@ -83,7 +83,25 @@ namespace AutoClicker
                     break;
             }
         }
+        public void SizeMode(int mode)
+        {
+            switch (mode)
+            {
+                case 1:
+                    this.Width = 800;
+                    this.Height = 450;
+                    break;
+                case 2:
+                    this.Width = 1200;
+                    this.Height = 600;
+                    break;
+                case 3:
+                    break;
 
+                default:
+                    break;
+            }   
+        }
 
         private void MouseClickClicker(object sender, MouseButtonEventArgs e)
         {
@@ -102,6 +120,7 @@ namespace AutoClicker
                 default:
                     break;
             }
+            SizeMode(1);
         }
 
         private void Border_MouseDown_4(object sender, MouseButtonEventArgs e)
@@ -111,15 +130,18 @@ namespace AutoClicker
             {
                 case Visibility.Visible:
                     ScriptPanel.Visibility = Visibility.Hidden;
+                    SizeMode(1);
                     break;
                 case Visibility.Hidden:
                     ScriptPanel.Visibility = Visibility.Visible;
+                    SizeMode(2);
                     break;
                 case Visibility.Collapsed:
                     break;
                 default:
                     break;
             }
+            // Height="450" Width="800"
            
         }
     }
