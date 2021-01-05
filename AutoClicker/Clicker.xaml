@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="AutoClicker.Clicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Width="500" Height="290"
+             Background="#B2808080">
+    <Grid>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Content="Clicker #1" FontFamily="Comic Sans MS" Foreground="White" FontSize="18" Margin="10,10,0,0" FontWeight="Bold"></Label>
+        <StackPanel Width="170" HorizontalAlignment="Left" Margin="15,45,0,0">
+            <Border Background="White" VerticalAlignment="Top"  Height="45" Margin="0,10,0,0" >
+                <StackPanel>
+                    <Border Background="#FF898989">
+                        <Grid>
+                            <Border HorizontalAlignment="Right" Width="20" Height="20" Background="Red" VerticalAlignment="Center" Margin="0,0,2,0" MouseDown="MouseClick_clearKey"/>
+                            <Label Content="Key bind" FontFamily="Corbel" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Left"/>
+                        </Grid>
+                    </Border>
+                    <TextBox x:Name="TextBoxBindKey" TextWrapping="Wrap" Height="20" Background="#FFACACAC" BorderThickness="0" SelectionTextBrush="White" BorderBrush="White" CaretBrush="Red"/>
+                    <TextBox x:Name="Focus"  TextWrapping="Wrap" BorderBrush="{Binding Background, ElementName=textBox}" Height="20" Background="#FFACACAC" BorderThickness="0" UndoLimit="1"/>
+
+
+                </StackPanel>
+            </Border>
+
+
+            <Border Background="White" Height="50" Margin="0,5,0,0">
+                <Grid>
+                    <Border Background="#FF898989" VerticalAlignment="Top">
+                        <Grid>
+                            <Label Content="Доп. инф" FontFamily="Corbel" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Left"/>
+                        </Grid>
+                    </Border>
+                    <Border x:Name="StatusInfoPanel" Background="Red" VerticalAlignment="Top" Height="23" Margin="0,26,0,0" MouseDown="Border_MouseDown">
+
+                    </Border>
+                </Grid>
+            </Border>
+            <Border Background="White" Height="50" Margin="0,5,0,0">
+                <StackPanel>
+                    <Border Background="#FF898989" VerticalAlignment="Top">
+                        <Grid>
+                            <Label Content="Timer ( ms )" FontFamily="Corbel" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Left"/>
+                        </Grid>
+                    </Border>
+                    <TextBox x:Name="TimeBox" Text="1" TextWrapping="Wrap" BorderBrush="{Binding Background, ElementName=textBox}" Height="25" Background="#FFACACAC" BorderThickness="0" UndoLimit="100" TextChanged="TimeBox_TextChanged" KeyDown="TimeBox_KeyDown" VerticalContentAlignment="Center" FontFamily="Microsoft Sans Serif" FontSize="16" HorizontalContentAlignment="Center"/>
+
+                </StackPanel>
+            </Border>
+
+            <Border Background="White" Height="55" Margin="0,5,0,0">
+                <StackPanel>
+                    <Border Background="#FF898989" VerticalAlignment="Top">
+                        <Grid>
+                            <Label Content="Mouse key" FontFamily="Corbel" FontWeight="Bold"  Foreground="White" HorizontalAlignment="Left"/>
+                        </Grid>
+                    </Border>
+                    <Grid Margin="0,3,0,0">
+                        <Border x:Name="B1" Background="#FF9C9C9C" Width="25" Height="25" HorizontalAlignment="Left" MouseDown="MouseDown_m1">
+                            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="L" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                        </Border>
+                        <Border x:Name="B2" Background="#FF9C9C9C" Width="25" Height="25" MouseDown="MouseDown_m2">
+                            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="M" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                        </Border>
+                        <Border x:Name="B3" Background="#FF9C9C9C" Width="25" Height="25" HorizontalAlignment="Right" MouseDown="MouseDown_m3">
+                            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="R" FontFamily="Comic Sans MS" Foreground="White"></Label>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        
+        
+        <Border x:Name="CCclick" BorderBrush="White" CornerRadius="50" BorderThickness="1" HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Background="#FF21FF00" MouseDown="Border_MouseDown_1" MouseUp="Border_MouseUp">
+            <Label x:Name="CountC" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="--" Foreground="White" FontFamily="Comic Sans MS" FontSize="16"></Label>
+        </Border>
+
+    </Grid>
+</UserControl>

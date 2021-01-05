@@ -1,0 +1,81 @@
+﻿<Window x:Class="AutoClicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoClicker"
+        mc:Ignorable="d" AllowsTransparency="True" WindowStyle="None" 
+        Title="AutoClicker v 1.0" Height="450" Width="800">
+    <Window.Background>
+        <SolidColorBrush Opacity="0.3" Color="#FF212123" ></SolidColorBrush>
+    </Window.Background>
+    <Border BorderBrush="#FFA200FF" BorderThickness="1">
+        <Grid>
+            <Grid VerticalAlignment="Top" >
+                <Border VerticalAlignment="Top" Height="22" Background="#FF2C2C2C"  Margin="4,10,4,0" MouseDown="Border_MouseDown">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                            <Border Width="30" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="22" Margin="4,0,0,0" MouseDown="Border_MouseDown_2">
+                                <Grid>
+                                    <Border Width="30">
+                                        <Label Content="-" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" UseLayoutRounding="False" FontFamily="Comic Sans MS" FontSize="24" Margin="-0.166,-8,0.166,8" Foreground="White"></Label>
+
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="#FF494949"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter  Property="Border.Background" Value="#FF767676" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                    </Border>
+                                </Grid>
+                            </Border>
+
+                            <Border  Width="30" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="22" Margin="4,0,0,0" MouseDown="Border_MouseDown_1">
+                                <Grid>
+                                    <Border>
+                                        <Label Foreground="White" FontFamily="Comic Sans MS" Content="X" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Padding="0"/>
+
+                                        <Border.Style>
+                                            <Style>
+                                                <Setter Property="Border.Background" Value="#FFFF3A3A"/>
+                                                <Style.Triggers>
+                                                    <Trigger Property="Border.IsMouseOver" Value="True">
+                                                        <Setter Property="Border.Background" Value="#FFFF6D6D" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Border.Style>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="49" CornerRadius="4" Background="#FF444444" Margin="0,0,0,0" MouseDown="MouseClickClicker">
+                                <Label Content="Clicker" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Foreground="White"/>
+                            </Border>
+                            <Border Width="47" CornerRadius="4" Background="#FF444444" Margin="4,0,0,0" MouseDown="Border_MouseDown_4">
+                                <Label Content="Script" VerticalContentAlignment="Center" Padding="0" HorizontalContentAlignment="Center" Foreground="White"/>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid x:Name="grid" Margin="0,44,0,0">
+                <Image Source="catsB.png"/>
+                <local:Clicker Visibility="Hidden" x:Name="ClickerPanel" Width="{Binding ActualWidth, ElementName=grid, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=grid, Mode=OneWay}"/>
+                <local:ScriptPanel Visibility="Hidden" x:Name="ScriptPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=grid, Mode=OneWay}" Height="{Binding ActualHeight, ElementName=grid, Mode=OneWay}" />
+
+
+            </Grid>
+
+        </Grid>
+
+
+    </Border>
+
+</Window>
